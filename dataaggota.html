@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Data Anggota IPM PIRIME</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #f2f2f2;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .result {
+            margin-top: 20px;
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-img {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo_IPMP-removebg-preview.png" alt="" width="50px">
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="dataaggota.html">Data Anggota</a></li>
+                <li><a href="#">Kegiatan</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <main>
+        <div class="logo-img">
+            <img src="mekison.jpg" alt="" width="100px">
+            <h2>Mekison Kogoya</h2>
+            <p>Ketua Kesekretariatan</p>
+        </div>
+        <section class="hero">
+            <h1>Silakan Cari Data Anda</h1>
+            <h2>jika setelah cek data anda yang belum lunas silakan kasih lunas padasahat Pembagian Sertifikat , jika
+                tidak! kami panitia akan tahan Demikian yang tidak ikut </h2>
+        </section>
+
+        <h2>Cari Anggota IPM-P</h2>
+        <input type="text" id="keyword" placeholder="Masukkan Nama atau Kode Unik">
+        <div class="result" id="hasilPencarian"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 IPM_P. Pengembangan Website Anak Ilin</p>
+    </footer>
+
+
+
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        const anggota = [
+            { no: 1, nama: "ALUS WENDA", ttl: "Wamindik 04 April 2005", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "UNCEN", tahun: "2023", iuran: "Rp100.000" },
+            { no: 2, nama: "TOPIANUS KOGOYA", ttl: "milimbo 12 Maret 2006", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "UNCEN", tahun: "2024", iuran: "Rp100.000" },
+            { no: 3, nama: "TEKO WANIMBO", ttl: "Wenom 03 juni 2005", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "UNCEN", tahun: "2024", iuran: "Rp100.000" },
+            { no: 4, nama: "SALENG WANIMBO", ttl: "Miliombo 28 Januari 2006", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "UNIGRAT PAPUA", tahun: "2024", iuran: "Rp100.000" },
+            { no: 5, nama: "MILIGTER KOGOYA", ttl: "Kuwake 09 mei 2004", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "STAKPN SENTANI", tahun: "2023", iuran: "Rp100.000" },
+            { no: 6, nama: "ASOMI KOGOYA", ttl: "11-Jan-06", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "UNCEN", tahun: "2004", iuran: "Rp100.000" },
+            { no: 7, nama: "NELINUS WENDA", ttl: "Imanuel 15 juni 2002", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2022", iuran: "Rp100.000" },
+            { no: 8, nama: "NOPRAS WAKERKWA", ttl: "12-Des-04", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UMP", tahun: "2022", iuran: "Rp100.000" },
+            { no: 9, nama: "ROLA KOGOYA", ttl: "takobak 21 Maret 2005", jk: "PEREMPUAN", kampung: "MILIMBO", kampus: "POLTEKES", tahun: "2023", iuran: "Rp100.000" },
+            { no: 10, nama: "LINCE WANIMBO", ttl: "Pirime 13 september 2003", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "UNCEN", tahun: "2023", iuran: "Rp100.000" },
+            { no: 11, nama: "DORILINCE WANIMBO", ttl: "Ilungume 10 september 2001", jk: "PEREMPUAN", kampung: "BUGUKGONAK", kampus: "POLTEKES", tahun: "2024", iuran: "Rp100.000" },
+            { no: 12, nama: "DORILINCE TABUNI", ttl: "Melendik 8 agustus 1995", jk: "PEREMPUAN", kampung: "BUGUKGONAK", kampus: "PORT NUMBAY", tahun: "", iuran: "Rp100.000" },
+            { no: 13, nama: "ORIS WAKERKWA", ttl: "Kabiga juli 2007", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2024", iuran: "Rp100.000" },
+            { no: 14, nama: "ROY WANIMBO", ttl: "Koinonia 7 Januari 2007", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2024", iuran: "Rp100.000" },
+            { no: 15, nama: "SUPRIDA KOGOYA", ttl: "Wamaroma 11 mei 2004", jk: "PEREMPUAN", kampung: "MILIMBO", kampus: "UNCEN", tahun: "2022", iuran: "Rp100.000" },
+            { no: 16, nama: "VIRGINA YESICA KOGOYA", ttl: "Wamena 27 Januari 2005", jk: "PEREMPUAN", kampung: "MILIMBO", kampus: "POLTEKES", tahun: "2023", iuran: "Rp100.000" },
+            { no: 17, nama: "KRISTINA WANIMBO", ttl: "01-Jan-05", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "UNCEN", tahun: "2023", iuran: "Rp100.000" },
+            { no: 18, nama: "MALUK WANIMBO", ttl: "Pirime 13 November 2003", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "STAKPN SENTANI", tahun: "2022", iuran: "Rp100.000" },
+            { no: 19, nama: "OPRAS ELOPERE", ttl: "Wanima 09/mei/2005", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2023", iuran: "Rp100.000" },
+            { no: 20, nama: "GRACE WANNA WENDA", ttl: "Surabaya 18/oktober 2004", jk: "PEREMPUAN", kampung: "MILIMBO", kampus: "UNCEN", tahun: "2022", iuran: "Rp100.000" },
+            { no: 21, nama: "DEKI WENDA", ttl: "takobak 18/oktober/2002", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "UNCEN", tahun: "2022", iuran: "Rp100.000" },
+            { no: 22, nama: "OLLA KOGOYA", ttl: "Pirime 07/juni 2006", jk: "PEREMPUAN", kampung: "MILIMBO", kampus: "UNCEN", tahun: "2024", iuran: "Rp100.000" },
+            { no: 23, nama: "ELIS WAKERKWA", ttl: "05-Okt-03", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UMP", tahun: "2022", iuran: "Rp50.000" },
+            { no: 24, nama: "IS WENDA", ttl: "Nambume 27 september 2004", jk: "LAKI-LAKI", kampung: "AWINA", kampus: "UNCEN", tahun: "2022", iuran: "Rp50.000" },
+            { no: 25, nama: "SEPI WANIMBO", ttl: "Pirime 02/oktober 2003", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "POLTEKES", tahun: "2023", iuran: "Rp50.000" },
+            { no: 26, nama: "BERLINDA WANIMBO", ttl: "Ekanom/30/mei/2005", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "UNCEN", tahun: "2024", iuran: "Rp50.000" },
+            { no: 27, nama: "NIPAN WANIMBO", ttl: "29-Agu-02", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "PORT NUMBAY", tahun: "2022", iuran: "Rp50.000" },
+            { no: 28, nama: "ROIS WAKERKWA", ttl: "12-Mar-07", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "STT-B", tahun: "2024", iuran: "Rp50.000" },
+            { no: 29, nama: "ERMIN WENDA", ttl: "Kuanom 19 juli 2005", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "UNCEN", tahun: "2023", iuran: "Rp50.000" },
+            { no: 30, nama: "JEN ELISABET WAKERKWA", ttl: "Pirime 19 february 2005", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "STT-B", tahun: "2023", iuran: "Rp100.000" },
+            { no: 31, nama: "IRIANI TABUNI", ttl: "Ekanom 01 mei 2006", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "UNCEN", tahun: "2024", iuran: "Rp100.000" },
+            { no: 32, nama: "SORIS WANIMBO", ttl: "", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "UNCEN", tahun: "2024", iuran: "" },
+            { no: 33, nama: "RONAL WANIMBO", ttl: "28-Agu-06", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "UNCEN", tahun: "2024", iuran: "Rp50.000" },
+            { no: 34, nama: "PRISWALI WANIMBO", ttl: "Ekanom 28 Agustus 2006", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "UNCEN", tahun: "2024", iuran: "Rp50.000" },
+            { no: 35, nama: "DISK WENDA", ttl: "", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "UNCEN", tahun: "2024", iuran: "Rp100.000" },
+            { no: 36, nama: "PIRIS WAKERKWA", ttl: "Eyuni 18 juni 2002", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "UNCEN", tahun: "2023", iuran: "" },
+            { no: 37, nama: "RIAL WENDA", ttl: "17-Agu-03", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2022", iuran: "" },
+            { no: 38, nama: "ERWAN WANIMBO", ttl: "Umbanume 25 juni 2005", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "STT-B", tahun: "2023", iuran: "" },
+            { no: 39, nama: "YOSEP WANIMBO", ttl: "01-Jan-06", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "STT-B", tahun: "2024", iuran: "" },
+            { no: 40, nama: "CICI SILVANA KOGOYA", ttl: "Manado 15 april 2004", jk: "PEREMPUAN", kampung: "MILIMBO", kampus: "POLTEKES", tahun: "2024", iuran: "Rp100.000" },
+            { no: 41, nama: "MERONI WANIMBO", ttl: "", jk: "PEREMPUAN", kampung: "INDAWA", kampus: "UNCEN", tahun: "2023", iuran: "Rp40.000" },
+            { no: 42, nama: "NASON WENDA", ttl: "gunung susu 06-08-2005", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "USTJ", tahun: "", iuran: "Rp50.000" },
+            { no: 43, nama: "ANJELO WAKERKWA", ttl: "Jayapura 12-01-2006", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "USTJ", tahun: "", iuran: "Rp50.000" },
+            { no: 44, nama: "RIANI WAKERKWA", ttl: "", jk: "PEREMPUAN", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2023", iuran: "Rp50.000" },
+            { no: 45, nama: "ABORI WANIMBO", ttl: "", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "POKTEKES", tahun: "2022", iuran: "" },
+            { no: 46, nama: "PISMAN WANIMBO", ttl: "", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2024", iuran: "" },
+            { no: 47, nama: "MESON WAKERKWA", ttl: "", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "UNIGRAT-PAPUA", tahun: "2022", iuran: "" },
+            { no: 48, nama: "SERI WANIMBO", ttl: "", jk: "PEREMPUAN", kampung: "BUGUKGONAK", kampus: "STT-B", tahun: "2023", iuran: "" },
+            { no: 49, nama: "EPISON WANIMBO", ttl: "", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "USTJ", tahun: "2022", iuran: "" },
+            { no: 50, nama: "ALIS T . WAKER", ttl: "", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "USTJ", tahun: "2022", iuran: "" },
+            { no: 51, nama: "PANCE WAKERKWA", ttl: "", jk: "PEREMPUAN", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2023", iuran: "" },
+            { no: 52, nama: "NUEL WAKERKWA", ttl: "17-Jun-07", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "STT-B", tahun: "2024", iuran: "Rp100.000" },
+            { no: 53, nama: "PILES WANIMBO", ttl: "Wamundik 09 desember 2005", jk: "LAKI-LAKI", kampung: "MILIMBO", kampus: "STT-B", tahun: "2024", iuran: "Rp100.000" },
+            { no: 54, nama: "PITNIEL WAKERKWA", ttl: "", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "USTJ", tahun: "2020", iuran: "Rp100.000" },
+            { no: 55, nama: "MAILEN T.N. WANIMBO", ttl: "Jayapura 11/mei/ 2005", jk: "PEREMPUAN", kampung: "PIRIME", kampus: "UNCEN", tahun: "2023", iuran: "Rp50.000" },
+            { no: 56, nama: "MAIKEL FRENGKI WANIMBO", ttl: "Jayapura 11/mei/ 2005", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "UNCEN", tahun: "2023", iuran: "Rp100.000" },
+            { no: 57, nama: "JENI WANIMBO", ttl: "Wamena 11-08-2005", jk: "PEREMPUAN", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "2023", iuran: "Rp50.000" },
+            { no: 58, nama: "RODY WANIMBO", ttl: "tiom 04-06-2003", jk: "LAKI-LAKI", kampung: "BUGUKGONAK", kampus: "UNCEN", tahun: "", iuran: "Rp50.000" },
+            { no: 59, nama: "OKTOVIANA KOMBA", ttl: "Cianjur 21-10-2000", jk: "PEREMPUAN", kampung: "", kampus: "USTJ", tahun: "", iuran: "" },
+            { no: 60, nama: "EVELIN WENDA", ttl: "Kehiran 23-12-2005", jk: "PEREMPUAN", kampung: "", kampus: "USTJ", tahun: "", iuran: "" },
+            { no: 61, nama: "WENE WANIMBO", ttl: "Pirime 22 desember 2003", jk: "LAKI-LAKI", kampung: "PIRIME", kampus: "USTJ", tahun: "2023", iuran: "" },
+            { no: 62, nama: "ELIKU WAKERKWA", ttl: "Pirime 02 juni 2002", jk: "PEREMPUAN", kampung: "BUGUKGNAK" },
+            { no: 63, nama: "MEKISON KOGOYA", ttl: "milimbo 05-november 2004", jk: "LAKI-LAKI", kampung: "Milimbo", kampus: "UNCEN", tahun: "2022", iuran: "Rp100.000" },
+
+            // ... (lanjutkan semua data)
+        ];
+
+        document.getElementById("keyword").addEventListener("input", function () {
+            const keyword = this.value.toLowerCase().trim();
+            const hasil = document.getElementById("hasilPencarian");
+            hasil.innerHTML = "";
+
+            if (keyword.length === 0) return;
+
+            const hasilCari = anggota.filter(a =>
+                a.nama.toLowerCase().includes(keyword) || a.no.toString() === keyword
+            );
+
+            if (hasilCari.length > 0) {
+                hasil.innerHTML = hasilCari.map(a => `
+                <div>
+                    <strong>No:</strong> ${a.no}<br>
+                    <strong>Nama:</strong> ${a.nama}<br>
+                    <strong>Tempat, Tanggal Lahir:</strong> ${a.ttl}<br>
+                    <strong>Jenis Kelamin:</strong> ${a.jk}<br>
+                    <strong>Kampung:</strong> ${a.kampung}<br>
+                    <strong>Kampus:</strong> ${a.kampus}<br>
+                    <strong>Tahun Angkatan:</strong> ${a.tahun}<br>
+                    <strong>Iuran:</strong> ${a.iuran}
+                </div>
+                <hr>
+            `).join("");
+            } else {
+                hasil.innerHTML = `<p>Data tidak ditemukan. Pastikan nama atau ID benar.</p>`;
+            }
+        });
+    </script>
+
+</body>
+
+</html>
